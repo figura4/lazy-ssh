@@ -7,7 +7,6 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -42,7 +41,6 @@ public class PoweroffFragment extends Fragment implements OnClickListener {
     }
     
 	public void PowerOff(View v){
-		Log.d("NasPoweroff", "method PowerOff called");
     	console.append(v.getResources().getString(R.string.message_connecting));
     	new SshRequestThread().execute();
 	}
@@ -65,7 +63,6 @@ public class PoweroffFragment extends Fragment implements OnClickListener {
 	    }
 
 	    protected void onPostExecute(String result) {
-	    	Log.d("NasPoweroff", result);
 	    	console.append(result);
 	    }  
 	}

@@ -12,7 +12,6 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -70,15 +69,15 @@ public class MainActivity extends Activity {
 
             /** Called when a drawer has settled in a completely closed state. */
             public void onDrawerClosed(View view) {
-            	Log.d("PowerOff NAS", "onDrawerClosed: " + getTitle().toString());
-                getActionBar().setTitle(getTitle());
+                getActionBar().setTitle(view.getResources().getString(R.string.app_name));
+                getActionBar().setSubtitle(getTitle());
                 invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
             }
 
             /** Called when a drawer has settled in a completely open state. */
             public void onDrawerOpened(View drawerView) {
-            	Log.d("PowerOff NAS", "onDrawerOpened: " + getTitle().toString());
-                getActionBar().setTitle(getTitle());
+                getActionBar().setTitle(drawerView.getResources().getString(R.string.app_name));
+                getActionBar().setSubtitle(getTitle());
                 invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
             }
         };
@@ -87,6 +86,8 @@ public class MainActivity extends Activity {
         mDrawerLayout.setDrawerListener(mDrawerToggle);
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getActionBar().setHomeButtonEnabled(true);
+        getActionBar().setTitle(this.getResources().getString(R.string.app_name));
+        getActionBar().setSubtitle(this.getResources().getString(R.string.title_splash_fragment));
 	}
     
     public class DrawerItemClickListener implements ListView.OnItemClickListener {
@@ -133,7 +134,7 @@ public class MainActivity extends Activity {
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         // If the nav drawer is open, hide action items related to the content view
-        boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
+        //boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
         //menu.findItem(R.id.action_exit).setVisible(!drawerOpen);
         return super.onPrepareOptionsMenu(menu);
     }

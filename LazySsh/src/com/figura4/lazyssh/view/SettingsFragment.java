@@ -9,7 +9,6 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
-import android.util.Log;
 
 public class SettingsFragment extends PreferenceFragment implements OnSharedPreferenceChangeListener  {
     @Override
@@ -48,7 +47,6 @@ public class SettingsFragment extends PreferenceFragment implements OnSharedPref
             p.setSummary(listPref.getEntry());
         }
         if (p instanceof EditTextPreference) {
-        	Log.d("nas poweroff", p.getKey());
         	if (p.getKey().equals("nas_ssh_password")) {
         		p.setSummary("***");
         	} else {

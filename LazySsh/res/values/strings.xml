@@ -4,13 +4,13 @@
     <string name="app_name">Lazy ssh</string>
     <string name="title_activity_settings">Settings</string>
     <string name="title_poweroff_fragment">PowerOff NAS</string>
-    <string name="title_splash_fragment">Lazy SSH</string>
+    <string name="title_splash_fragment">Take it easy, man</string>
     <string name="action_settings">Settings</string>
     <string name="action_exit">Exit app</string>
     <string name="button_poweroff">PowerOff your NAS</string>
     <string name="drawer_open">Choose shortcut</string>
     <string name="drawer_close">Close navigation drawer</string>
-    <string name="splash_text">Shortcust\nfor\nlazy sysadmins\n\npick your shortcut in the nav drawer</string>
+    <string name="splash_text">Shortcuts\nfor\nlazy sysadmins.\n\nPick your shortcut in the nav drawer</string>
     
     <string name="message_connecting">Attempting ssh connection&#8230;\n\n</string>
     <string name="message_command_sent">PowerOff command sent.\n\n</string>
