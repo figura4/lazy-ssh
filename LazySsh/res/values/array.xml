@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="menu_array">
+        <item>PowerOff NAS</item>
+        <item>Settings</item>
+        <item>Exit app</item>
+    </string-array>
+</resources>
