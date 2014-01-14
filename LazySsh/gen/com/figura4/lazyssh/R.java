@@ -33,8 +33,9 @@ public final class R {
         public static final int ic_launcher=0x7f020003;
     }
     public static final class id {
-        public static final int action_settings=0x7f0b0005;
+        public static final int action_settings=0x7f0b0006;
         public static final int button_poweroff=0x7f0b0004;
+        public static final int button_wol=0x7f0b0005;
         public static final int content_frame=0x7f0b0001;
         public static final int drawer_layout=0x7f0b0000;
         public static final int edit_console=0x7f0b0003;
@@ -45,39 +46,44 @@ public final class R {
         public static final int drawer_list_item=0x7f030001;
         public static final int fragment_splash=0x7f030002;
         public static final int fragment_turn_off=0x7f030003;
+        public static final int fragment_wake_on_lan=0x7f030004;
     }
     public static final class menu {
         public static final int main=0x7f0a0000;
     }
     public static final class string {
-        public static final int action_exit=0x7f080005;
-        public static final int action_settings=0x7f080004;
+        public static final int action_exit=0x7f080006;
+        public static final int action_settings=0x7f080005;
         public static final int app_name=0x7f080000;
-        public static final int button_poweroff=0x7f080006;
-        public static final int drawer_close=0x7f080008;
-        public static final int drawer_open=0x7f080007;
-        public static final int message_command_sent=0x7f08000b;
-        public static final int message_connect=0x7f08000d;
-        public static final int message_connecting=0x7f08000a;
-        public static final int message_finished=0x7f08000f;
-        public static final int message_sending_command=0x7f08000e;
-        public static final int message_setup_connection=0x7f08000c;
-        public static final int pref_advanced_title=0x7f080016;
-        public static final int pref_nas_command_default=0x7f08001b;
-        public static final int pref_nas_command_title=0x7f080014;
-        public static final int pref_nas_ip_address_default=0x7f080017;
-        public static final int pref_nas_ip_address_title=0x7f080010;
-        public static final int pref_nas_ssh_password_default=0x7f080019;
-        public static final int pref_nas_ssh_password_title=0x7f080012;
-        public static final int pref_nas_ssh_port_default=0x7f08001a;
-        public static final int pref_nas_ssh_port_title=0x7f080013;
-        public static final int pref_nas_ssh_username_default=0x7f080018;
-        public static final int pref_nas_ssh_username_title=0x7f080011;
-        public static final int pref_network_title=0x7f080015;
-        public static final int splash_text=0x7f080009;
+        public static final int button_poweroff=0x7f080007;
+        public static final int button_wol=0x7f080008;
+        public static final int drawer_close=0x7f08000a;
+        public static final int drawer_open=0x7f080009;
+        public static final int message_command_sent=0x7f08000d;
+        public static final int message_connect=0x7f08000f;
+        public static final int message_connecting=0x7f08000c;
+        public static final int message_finished=0x7f080011;
+        public static final int message_sending_command=0x7f080010;
+        public static final int message_setup_connection=0x7f08000e;
+        public static final int pref_advanced_title=0x7f080019;
+        public static final int pref_nas_command_default=0x7f08001f;
+        public static final int pref_nas_command_title=0x7f080017;
+        public static final int pref_nas_ip_address_default=0x7f08001a;
+        public static final int pref_nas_ip_address_title=0x7f080012;
+        public static final int pref_nas_mac_address_default=0x7f08001b;
+        public static final int pref_nas_mac_address_title=0x7f080013;
+        public static final int pref_nas_ssh_password_default=0x7f08001d;
+        public static final int pref_nas_ssh_password_title=0x7f080015;
+        public static final int pref_nas_ssh_port_default=0x7f08001e;
+        public static final int pref_nas_ssh_port_title=0x7f080016;
+        public static final int pref_nas_ssh_username_default=0x7f08001c;
+        public static final int pref_nas_ssh_username_title=0x7f080014;
+        public static final int pref_network_title=0x7f080018;
+        public static final int splash_text=0x7f08000b;
         public static final int title_activity_settings=0x7f080001;
         public static final int title_poweroff_fragment=0x7f080002;
         public static final int title_splash_fragment=0x7f080003;
+        public static final int title_wake_on_lan_fragment=0x7f080004;
     }
     public static final class style {
         public static final int myTheme=0x7f090000;

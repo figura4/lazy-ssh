@@ -2,15 +2,23 @@
 <resources>
 
     <string name="app_name">Lazy ssh</string>
+    
     <string name="title_activity_settings">Settings</string>
+    
     <string name="title_poweroff_fragment">PowerOff NAS</string>
     <string name="title_splash_fragment">Take it easy, man</string>
+    <string name="title_wake_on_lan_fragment">Wake On LAN</string>
+    
     <string name="action_settings">Settings</string>
     <string name="action_exit">Exit app</string>
+    
     <string name="button_poweroff">PowerOff your NAS</string>
+    <string name="button_wol">Send Magic Packet</string>
+    
     <string name="drawer_open">Choose shortcut</string>
     <string name="drawer_close">Close navigation drawer</string>
-    <string name="splash_text">Shortcuts\nfor\nlazy sysadmins.\n\nPick your shortcut in the nav drawer</string>
+    
+    <string name="splash_text">Shortcuts\nfor\nlazy sysadmins.\n\nPick your shortcut in the nav drawer\n\n&lt;----</string>
     
     <string name="message_connecting">Attempting ssh connection&#8230;\n\n</string>
     <string name="message_command_sent">PowerOff command sent.\n\n</string>
@@ -20,6 +28,7 @@
     <string name="message_finished">Finished.\n</string>
     
     <string name="pref_nas_ip_address_title">NAS IP address</string>
+    <string name="pref_nas_mac_address_title">NAS MAC address</string>
     <string name="pref_nas_ssh_username_title">SSH username</string>
     <string name="pref_nas_ssh_password_title">SSH password</string>
     <string name="pref_nas_ssh_port_title">SSH port</string>
@@ -28,6 +37,7 @@
     <string name="pref_advanced_title">Advanced settings</string>
     
     <string name="pref_nas_ip_address_default">192.168.0.1</string>
+    <string name="pref_nas_mac_address_default">00:00:00:00:00:00</string>
     <string name="pref_nas_ssh_username_default">admin</string>
     <string name="pref_nas_ssh_password_default">password</string>
     <string name="pref_nas_ssh_port_default">22</string>

@@ -47,7 +47,7 @@ public class MainActivity extends Activity {
 		mMenuTitles = getResources().getStringArray(R.array.menu_array);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
-
+        
         // Set the adapter for the list view
         mDrawerList.setAdapter(new ArrayAdapter<String>(this,
                 R.layout.drawer_list_item, mMenuTitles));
@@ -110,13 +110,20 @@ public class MainActivity extends Activity {
     			break;
     			
     		case 1:
+    			fragment = new WakeOnLanFragment();
+    			fragmentManager.beginTransaction()
+    	        	.replace(R.id.content_frame, fragment)
+    	        	.commit();
+    			break;
+    			
+    		case 2:
     			fragment = new SettingsFragment();
     			fragmentManager.beginTransaction()
     	        	.replace(R.id.content_frame, fragment)
     	        	.commit();
                 break;
     			
-    		case 2:
+    		case 3:
     			Intent intent = new Intent(Intent.ACTION_MAIN);
 	        	intent.addCategory(Intent.CATEGORY_HOME);
 	        	intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
