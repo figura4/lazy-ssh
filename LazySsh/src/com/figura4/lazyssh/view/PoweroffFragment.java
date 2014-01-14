@@ -30,7 +30,7 @@ public class PoweroffFragment extends Fragment implements OnClickListener {
         btn.setOnClickListener(this);
         
         console = (EditText) rootView.findViewById(R.id.edit_console);
-        console.setText("case@mutewinter:~/documents/d_flatline$ _\n");
+        console.setText("case@wintermute:~/documents/d_flatline$ _\n");
         
         return rootView;
     }
