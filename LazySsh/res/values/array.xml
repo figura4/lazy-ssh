@@ -6,4 +6,11 @@
         <item>Settings</item>
         <item>Exit app</item>
     </string-array>
+    
+    <string-array name="menu_array_icons">
+        <item>ic_launcher.png</item>
+        <item>ic_launcher.png</item>
+        <item>ic_launcher.png</item>
+        <item>ic_launcher.png</item>
+    </string-array>
 </resources>

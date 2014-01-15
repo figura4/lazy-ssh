@@ -3,6 +3,7 @@ package com.figura4.lazyssh.view;
 import com.figura4.lazyssh.R;
 import com.figura4.lazyssh.view.SettingsFragment;
 import com.figura4.lazyssh.view.PoweroffFragment;
+import com.figura4.lazyssh.adapters.DrawerArrayAdapter;
 import com.figura4.lazyssh.model.SshRequestThread;
 
 import android.os.Bundle;
@@ -27,6 +28,7 @@ public class MainActivity extends Activity {
 
 	// Drawer management variables
     private String[] mMenuTitles;
+    private String[] mMenuIcons;
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -48,12 +50,14 @@ public class MainActivity extends Activity {
 		
     	// setting up drawer menu
 		mMenuTitles = getResources().getStringArray(R.array.menu_array);
+		mMenuIcons = getResources().getStringArray(R.array.menu_array_icons);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
         
         // Set the adapter for the list view
-        mDrawerList.setAdapter(new ArrayAdapter<String>(this,
-                R.layout.drawer_list_item, mMenuTitles));
+        mDrawerList.setAdapter(new DrawerArrayAdapter(this, mMenuTitles, mMenuIcons));
+        //mDrawerList.setAdapter(new ArrayAdapter<String>(this,
+        //        R.layout.drawer_list_item, mMenuTitles));
         
         // Set the list's click listener
         mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
