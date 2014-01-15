@@ -3,12 +3,15 @@ package com.figura4.lazyssh.view;
 import com.figura4.lazyssh.R;
 import com.figura4.lazyssh.view.SettingsFragment;
 import com.figura4.lazyssh.view.PoweroffFragment;
+import com.figura4.lazyssh.model.SshRequestThread;
 
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
@@ -77,7 +80,7 @@ public class MainActivity extends Activity {
             /** Called when a drawer has settled in a completely open state. */
             public void onDrawerOpened(View drawerView) {
                 getActionBar().setTitle(drawerView.getResources().getString(R.string.app_name));
-                getActionBar().setSubtitle(getTitle());
+                getActionBar().setSubtitle("Pick your shortcut");
                 invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
             }
         };
@@ -141,8 +144,8 @@ public class MainActivity extends Activity {
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         // If the nav drawer is open, hide action items related to the content view
-        //boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
-        //menu.findItem(R.id.action_exit).setVisible(!drawerOpen);
+        boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
+        //menu.findItem(R.id.).setVisible(!drawerOpen);
         return super.onPrepareOptionsMenu(menu);
     }
 
@@ -174,7 +177,6 @@ public class MainActivity extends Activity {
           return true;
         }
         // Handle your other action bar items...
-
         return super.onOptionsItemSelected(item);
     }
 }
