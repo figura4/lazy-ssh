@@ -3,6 +3,7 @@ package com.figura4.lazyssh.adapters;
 import com.figura4.lazyssh.R;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,18 +34,8 @@ public class DrawerArrayAdapter extends ArrayAdapter<String> {
     	
     	textView1.setText(values1[position]);
     	textView2.setText(values2[position]);
-    	
-    	switch(position) {
-    	case 0:
-    		imageView.setImageResource(R.drawable.ic_launcher);
-    		break;
-    		
-    	case 1:
-    		imageView.setImageResource(R.drawable.ic_launcher);
-    		break;	
-    	
-    	}
-
+    	int identifier = context.getResources().getIdentifier(values2[position], "drawable", "com.figura4.lazyssh");
+    	imageView.setImageResource(identifier);
     	return rowView;
     }
 }

@@ -10,7 +10,7 @@
     <string-array name="menu_array_icons">
         <item>ic_launcher.png</item>
         <item>ic_launcher.png</item>
-        <item>ic_launcher.png</item>
+        <item>ic_action_settings.png</item>
         <item>ic_launcher.png</item>
     </string-array>
 </resources>
