@@ -4,15 +4,12 @@ import com.figura4.lazyssh.R;
 import com.figura4.lazyssh.view.SettingsFragment;
 import com.figura4.lazyssh.view.PoweroffFragment;
 import com.figura4.lazyssh.adapters.DrawerArrayAdapter;
-import com.figura4.lazyssh.model.SshRequestThread;
 
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
@@ -20,7 +17,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 
@@ -28,6 +24,7 @@ public class MainActivity extends Activity {
 
 	// Drawer management variables
     private String[] mMenuTitles;
+    private String[] mMenuSubTitles;
     private String[] mMenuIcons;
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
@@ -50,12 +47,13 @@ public class MainActivity extends Activity {
 		
     	// setting up drawer menu
 		mMenuTitles = getResources().getStringArray(R.array.menu_array);
+		mMenuSubTitles = getResources().getStringArray(R.array.menu_array_line2);
 		mMenuIcons = getResources().getStringArray(R.array.menu_array_icons);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
         
         // Set the adapter for the list view
-        mDrawerList.setAdapter(new DrawerArrayAdapter(this, mMenuTitles, mMenuIcons));
+        mDrawerList.setAdapter(new DrawerArrayAdapter(this, mMenuTitles, mMenuSubTitles, mMenuIcons));
         //mDrawerList.setAdapter(new ArrayAdapter<String>(this,
         //        R.layout.drawer_list_item, mMenuTitles));
         
@@ -148,7 +146,7 @@ public class MainActivity extends Activity {
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         // If the nav drawer is open, hide action items related to the content view
-        boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
+        //boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
         //menu.findItem(R.id.).setVisible(!drawerOpen);
         return super.onPrepareOptionsMenu(menu);
     }
@@ -182,5 +180,30 @@ public class MainActivity extends Activity {
         }
         // Handle your other action bar items...
         return super.onOptionsItemSelected(item);
+    }
+    
+    @Override
+    public void onPause(){
+    	super.onPause();
+    }
+    
+    @Override
+    public void onStop(){
+    	super.onStop();
+    }
+    
+    @Override
+    public void onDestroy(){
+    	super.onDestroy();
+    }
+    
+    @Override
+    public void onResume(){
+    	super.onResume();
+    }
+    
+    @Override
+    public void onRestart(){
+    	super.onRestart();
     }
 }

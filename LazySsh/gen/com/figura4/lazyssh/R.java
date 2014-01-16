@@ -10,7 +10,8 @@ package com.figura4.lazyssh;
 public final class R {
     public static final class array {
         public static final int menu_array=0x7f050000;
-        public static final int menu_array_icons=0x7f050001;
+        public static final int menu_array_icons=0x7f050002;
+        public static final int menu_array_line2=0x7f050001;
     }
     public static final class attr {
     }
@@ -32,14 +33,14 @@ public final class R {
         public static final int action_search=0x7f020000;
         public static final int drawer_shadow=0x7f020001;
         public static final int ic_action_alarms=0x7f020002;
-        public static final int ic_action_discard=0x7f020003;
-        public static final int ic_action_flash_off=0x7f020004;
-        public static final int ic_action_settings=0x7f020005;
-        public static final int ic_drawer=0x7f020006;
-        public static final int ic_launcher=0x7f020007;
+        public static final int ic_action_cancel=0x7f020003;
+        public static final int ic_action_discard=0x7f020004;
+        public static final int ic_action_flash_off=0x7f020005;
+        public static final int ic_action_settings=0x7f020006;
+        public static final int ic_drawer=0x7f020007;
+        public static final int ic_launcher=0x7f020008;
     }
     public static final class id {
-        public static final int action_settings=0x7f0b0009;
         public static final int button_poweroff=0x7f0b0007;
         public static final int button_wol=0x7f0b0008;
         public static final int content_frame=0x7f0b0001;
@@ -69,26 +70,28 @@ public final class R {
         public static final int button_wol=0x7f080009;
         public static final int drawer_close=0x7f08000b;
         public static final int drawer_open=0x7f08000a;
-        public static final int message_command_sent=0x7f08000e;
-        public static final int message_connect=0x7f080010;
+        public static final int message_command_sent=0x7f08000f;
+        public static final int message_connect=0x7f080011;
         public static final int message_connecting=0x7f08000d;
-        public static final int message_finished=0x7f080012;
-        public static final int message_sending_command=0x7f080011;
-        public static final int message_setup_connection=0x7f08000f;
-        public static final int pref_advanced_title=0x7f08001a;
-        public static final int pref_nas_command_default=0x7f080020;
-        public static final int pref_nas_command_title=0x7f080018;
-        public static final int pref_nas_ip_address_default=0x7f08001b;
-        public static final int pref_nas_ip_address_title=0x7f080013;
-        public static final int pref_nas_mac_address_default=0x7f08001c;
-        public static final int pref_nas_mac_address_title=0x7f080014;
-        public static final int pref_nas_ssh_password_default=0x7f08001e;
-        public static final int pref_nas_ssh_password_title=0x7f080016;
-        public static final int pref_nas_ssh_port_default=0x7f08001f;
-        public static final int pref_nas_ssh_port_title=0x7f080017;
-        public static final int pref_nas_ssh_username_default=0x7f08001d;
-        public static final int pref_nas_ssh_username_title=0x7f080015;
-        public static final int pref_network_title=0x7f080019;
+        public static final int message_finished=0x7f080014;
+        public static final int message_sending_command=0x7f080012;
+        public static final int message_setup_connection=0x7f080010;
+        public static final int message_still_trying=0x7f080013;
+        public static final int message_wol_attempt=0x7f08000e;
+        public static final int pref_advanced_title=0x7f08001c;
+        public static final int pref_nas_command_default=0x7f080022;
+        public static final int pref_nas_command_title=0x7f08001a;
+        public static final int pref_nas_ip_address_default=0x7f08001d;
+        public static final int pref_nas_ip_address_title=0x7f080015;
+        public static final int pref_nas_mac_address_default=0x7f08001e;
+        public static final int pref_nas_mac_address_title=0x7f080016;
+        public static final int pref_nas_ssh_password_default=0x7f080020;
+        public static final int pref_nas_ssh_password_title=0x7f080018;
+        public static final int pref_nas_ssh_port_default=0x7f080021;
+        public static final int pref_nas_ssh_port_title=0x7f080019;
+        public static final int pref_nas_ssh_username_default=0x7f08001f;
+        public static final int pref_nas_ssh_username_title=0x7f080017;
+        public static final int pref_network_title=0x7f08001b;
         public static final int splash_text=0x7f08000c;
         public static final int title_activity_settings=0x7f080001;
         public static final int title_poweroff_fragment=0x7f080002;

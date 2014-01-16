@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="menu_array">
-        <item>PowerOff NAS</item>
-        <item>Wake On Lan NAS</item>
+        <item>PowerOff</item>
+        <item>Wake On Lan</item>
         <item>Settings</item>
         <item>Exit app</item>
+    </string-array>
+    
+    <string-array name="menu_array_line2">
+        <item>Send a poweroff command to your NAS via ssh</item>
+        <item>Send wol magic packet to your NAS</item>
+        <item>Set NAS parameters</item>
+        <item>Back to home screen</item>
     </string-array>
     
     <string-array name="menu_array_icons">
         <item>ic_action_flash_off</item>
         <item>ic_action_alarms</item>
         <item>ic_action_settings</item>
-        <item>ic_action_discard</item>
+        <item>ic_action_cancel</item>
     </string-array>
 </resources>

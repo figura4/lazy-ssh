@@ -1,11 +1,9 @@
 package com.figura4.lazyssh.view;
 
 import com.figura4.lazyssh.R;
-import com.figura4.lazyssh.model.WakeOnLan;
-
+import com.figura4.lazyssh.model.WolRequestThread;
 import android.app.Fragment;
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
@@ -17,11 +15,12 @@ import android.widget.EditText;
 
 public class WakeOnLanFragment extends Fragment implements OnClickListener {
 	protected EditText console;
+	protected WolRequestThread thread;
 	
     public WakeOnLanFragment() {
         // Empty constructor required for fragment subclasses
     }
-
+    
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
@@ -31,9 +30,32 @@ public class WakeOnLanFragment extends Fragment implements OnClickListener {
         btn.setOnClickListener(this);
         
         console = (EditText) rootView.findViewById(R.id.edit_console);
-        console.setText("jlebowski@thedude~/documents/nihilism$ _\n");
-        
+        console.setText("Jlebowski@thedude~/Documents/AboutNihilism$ _\n\n");
         return rootView;
+    }
+    
+    @Override
+    public void onPause(){
+    	super.onPause();
+    }
+    
+    @Override
+    public void onStop(){
+    	super.onStop();
+    	if (thread != null) {
+	    	thread.cancel(true);
+	    	thread = null;
+    	}
+    }
+    
+    @Override
+    public void onDestroy(){
+    	super.onDestroy();
+    }
+    
+    @Override
+    public void onResume(){
+    	super.onResume();
     }
     
     @Override
@@ -42,26 +64,13 @@ public class WakeOnLanFragment extends Fragment implements OnClickListener {
     }
     
 	public void wake(View v){
-    	console.append(v.getResources().getString(R.string.message_connecting));
-    	new SshRequestThread().execute();
-	}
-	
-	public class SshRequestThread extends AsyncTask<Void, Void, String> {
-	    
-		protected String doInBackground(Void...voids) {
-	    	SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
-	    	String ipAddress = preferences.getString("nas_ip_address", "");
-	    	String macAddress = preferences.getString("nas_mac_address", "");
-	    	String result = "";
-	    	
-	    	WakeOnLan wol = new WakeOnLan(ipAddress, macAddress);
-	    	result += wol.wake();
-	    	result += "finished.";
-	    	return result;
-	    }
-
-	    protected void onPostExecute(String result) {
-	    	console.append(result);
-	    }  
+    	console.append(v.getResources().getString(R.string.message_wol_attempt));
+    	
+    	SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+    	String ipAddress = preferences.getString("nas_ip_address", "");
+    	String macAddress = preferences.getString("nas_mac_address", "");
+    	
+    	thread = new WolRequestThread(ipAddress, macAddress, this.getActivity());
+    	thread.execute();
 	}
 }

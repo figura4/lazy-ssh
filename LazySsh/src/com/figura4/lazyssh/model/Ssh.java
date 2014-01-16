@@ -33,7 +33,7 @@ public class Ssh {
 	
 	public String executeCommand(String command) {
     	try { 
-    		result += "setting up connection&#8230;\n";
+    		result += "Setting up connection...\n\n";
 	    	JSch jsch = new JSch();
 			Session session = jsch.getSession(nasSshUsername, nasIpAddress, Integer.parseInt(nasSshPort));
 			session.setPassword(nasSshPassword);
@@ -43,7 +43,7 @@ public class Ssh {
 			prop.put("StrictHostKeyChecking", "no");
 			session.setConfig(prop);
 			
-			result += "connecting&#8230;\n";
+			result += "Connecting...\n\n";
 			session.connect();
 			
 			// SSH Channel
@@ -53,14 +53,14 @@ public class Ssh {
 			channelssh.setOutputStream(baos);
 			
 			// Execute command
-			result += "sending command&#8230;\n";
+			result += "Sending command&#8230;\n\n";
 			channelssh.setCommand(command);
 			channelssh.connect();        
 			channelssh.disconnect();
 			
 			Log.d("lazyssh", baos.toString());
 			result += baos.toString() + "\n";
-			result += "command sent.";
+			result += "Command sent.\n\n";
 			return result;
     	} 
     	catch (Exception e) 

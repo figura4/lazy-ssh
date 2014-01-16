@@ -3,24 +3,24 @@ package com.figura4.lazyssh.adapters;
 import com.figura4.lazyssh.R;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class DrawerArrayAdapter extends BaseAdapter {
 	private final Context context;
-	private final String[] values1;
-	private final String[] values2;
+	private final String[] titles;
+	private final String[] subititles;
+	private final String[] icons;
 
-	public DrawerArrayAdapter(Context context, String[] values1, String[] values2) {
+	public DrawerArrayAdapter(Context context, String[] titles, String[] subtitles, String[] icons) {
 	    this.context = context;
-	    this.values1 = values1;
-	    this.values2 = values2;
+	    this.titles = titles;
+	    this.subititles = subtitles;
+	    this.icons = icons;
 	}
 
     @Override
@@ -32,24 +32,22 @@ public class DrawerArrayAdapter extends BaseAdapter {
     	TextView textView2 = (TextView) rowView.findViewById(R.id.secondLine);
     	ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
     	
-    	textView1.setText(values1[position]);
-    	textView2.setText(values2[position]);
+    	textView1.setText(titles[position]);
+    	textView2.setText(subititles[position]);
     	
-    	Log.d("lazyssh", "R.drawable.ic_action_settings: "+ R.drawable.ic_action_settings);
-    	Log.d("lazyssh", "getIdentifier():" + context.getResources().getIdentifier(values2[position], "drawable", context.getPackageName()));
-    	int identifier = context.getResources().getIdentifier(values2[position], "drawable", context.getPackageName());
+    	int identifier = context.getResources().getIdentifier(icons[position], "drawable", context.getPackageName());
     	imageView.setImageResource(identifier);
     	return rowView;
     }
 
 	@Override
 	public int getCount() {
-		return values1.length;
+		return titles.length;
 	}
 
 	@Override
 	public Object getItem(int position) {
-		return values1[position];
+		return titles[position];
 	}
 
 	@Override

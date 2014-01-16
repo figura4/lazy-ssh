@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Lazy ssh</string>
+    <string name="app_name">Lazy NAS</string>
     
     <string name="title_activity_settings">Settings</string>
     
@@ -22,11 +22,13 @@
     <string name="splash_text">Shortcuts\nfor\nlazy sysadmins.\n\nPick your shortcut in the nav drawer\n\n&lt;----</string>
     
     <string name="message_connecting">Attempting ssh connection&#8230;\n\n</string>
+    <string name="message_wol_attempt">Attempting Wake on Lan&#8230;\n\n</string>
     <string name="message_command_sent">PowerOff command sent.\n\n</string>
-    <string name="message_setup_connection">Setting up connection&#8230;\n</string>
-    <string name="message_connect">Connecting&#8230;\n</string>
-    <string name="message_sending_command">Sending command&#8230;\n</string>
-    <string name="message_finished">Finished.\n</string>
+    <string name="message_setup_connection">Setting up connection&#8230;\n\n</string>
+    <string name="message_connect">Connecting&#8230;\n\n</string>
+    <string name="message_sending_command">Sending command&#8230;\n\n</string>
+    <string name="message_still_trying">Still trying&#8230;\n\n</string>
+    <string name="message_finished">Done.\n</string>
     
     <string name="pref_nas_ip_address_title">NAS IP address</string>
     <string name="pref_nas_mac_address_title">NAS MAC address</string>

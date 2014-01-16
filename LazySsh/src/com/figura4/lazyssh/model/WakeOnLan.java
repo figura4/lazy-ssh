@@ -5,7 +5,8 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 
 public class WakeOnLan {
-	public static final int PORT = 9;    
+	public static final int PORT9 = 9;    
+	public static final int PORT7 = 7;  
 	protected String ipAddress;
 	protected String macAddress;
 
@@ -15,6 +16,7 @@ public class WakeOnLan {
 	}
 	
 	public String wake() {
+		String result = "";
 	    try {
 	        byte[] macBytes = getMacBytes(macAddress);
 	        byte[] bytes = new byte[6 + 16 * macBytes.length];
@@ -26,12 +28,19 @@ public class WakeOnLan {
 	        }
 
 	        InetAddress address = InetAddress.getByName(ipAddress);
-	        DatagramPacket packet = new DatagramPacket(bytes, bytes.length, address, PORT);
+	        
+	        DatagramPacket packet7 = new DatagramPacket(bytes, bytes.length, address, PORT7);
+	        result += "Magic packet sent on UDP port 7...\n\n";
+	        DatagramPacket packet9 = new DatagramPacket(bytes, bytes.length, address, PORT9);
+	        result += "Magic packet sent on UDP port 9...\n\n";
 	        DatagramSocket socket = new DatagramSocket();
-	        socket.send(packet);
+	        
+	        socket.send(packet7);
+	        socket.send(packet9);
+	        
 	        socket.close();
 
-	        return "Wake-on-LAN packet sent.\n";
+	        return result + "Wake-on-LAN packets sent.\n";
 	    }
 	    catch (Exception e) {
 	    	return e.getMessage();
